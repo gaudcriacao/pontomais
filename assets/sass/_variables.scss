@@ -1,0 +1,25 @@
+// ==========================================================================
+// Theme Custom Variables
+// ==========================================================================
+//
+// Example, Try next line!
+//
+// COLORS
+$verde-dark: #2d888c;
+$verde-mid: #59c09b;
+$verde-light: #7cc89c;
+$grey: #606060;
+$grey-light: #6f6f6f;
+// FONTS
+$nexa-light: 'nexa-light',sans-serif;
+$nexa-regular: 'nexa-regular',sans-serif;
+$nexa-bold: 'nexa-bold',sans-serif;
+$nexa-heavy: 'nexa-heavy',sans-serif;
+$museo-slab: 'museo-slab',serif;
+// Border radius shorthand
+@mixin border-radius($radius) {
+				-webkit-border-radius: $radius;
+				border-radius: $radius;
+				// background-clip: padding-box;
+				/* stops bg color from leaking outside the border: */
+}

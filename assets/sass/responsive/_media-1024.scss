@@ -1,0 +1,168 @@
+@media screen and (max-width: 1024px) {
+				body {
+								font-size: 18px;
+								line-height: 1.45;
+								margin-bottom: 350px;
+				}
+				#footer {
+								height: 360px;
+								.footer-logo {
+												margin-bottom: 30px;
+												img {
+																margin: 0 auto;
+																max-width: 90%;
+												}
+								}
+								.footer-social {
+												margin-top: 20px;
+												ul {
+																float: none;
+												}
+								}
+				}
+				#copyright {
+								font-family: $nexa-regular;
+								font-size: 12px;
+				}
+				/*==========================================================================
+				HEADER & MENU
+				========================================================================== */
+				.navbar-header {
+								width: 100%;
+				}
+				.hidden-ipad {
+								display: none;
+								visibility: hidden;
+				}
+				.navbar-toggle {
+								display: block;
+								margin: 24px 0;
+				}
+				/*==========================================================================
+				INTRO SECTION
+				========================================================================== */
+				.intro {
+								background-size: cover;
+								.intro-image {
+												bottom: -40px;
+												right: -200px;
+												position: absolute;
+								}
+								.hero-wrapper {
+												width: 55%;
+												margin-bottom: 40px;
+								}
+								h2 {
+												font-size: 76px;
+												line-height: 70px;
+												width: 450px;
+												span {
+																font-size: 82px;
+												}
+								}
+								p.subline {
+												font-family: $nexa-regular;
+												font-size: 20px;
+												width: 100%;
+												margin-left: 0;
+								}
+								.intro-signup {
+												text-align: center;
+												padding: 30px 0 0;
+								}
+				}
+				.wrapper.top {
+								width: 100%;
+								padding-left: 40px;
+								padding-right: 40px;
+				}
+				/*==========================================================================
+				SOLUCOES
+				========================================================================== */
+				.section-solucoes .bg-left {
+								background: #f9f9f9 !important;
+				}
+				.pre-section-solucoes {
+								.intro-section .intro-title {
+												font-size: 32px;
+												line-height: 1.2;
+								}
+								.intro-section .intro-content {
+												font-size: 20px;
+												line-height: 1.45;
+								}
+				}
+				.solucoes-list .item .conteudo {
+								font-size: 18px;
+								line-height: 1.45;
+				}
+				.solucoes-list .item .titulo {
+								font-size: 22px;
+				}
+				.content-func {
+								img {
+												margin: 0 auto;
+								}
+				}
+				.box-func {
+								width: 33.33333%;
+				}
+				.content-func {
+								.title-inner-func {
+												text-align: center;
+								}
+								.sobre-func {
+												text-align: center;
+								}
+				}
+				.flickity-prev-next-button.next {
+								right: -1px !important;
+				}
+				.flickity-prev-next-button.previous {
+								left: -1px !important;
+				}
+				.section-contador {
+								.counter {
+												zoom: 0.8;
+								}
+				}
+				#section-experimente {
+								background-size: cover;
+								.stores-list {
+												margin-bottom: 60px;
+								}
+				}
+				// TABELA DE PREÇOS
+				#pricing-table {
+								.pricing {
+												.col-md-4:last-child {
+																.pricing-table {
+																				.pricing-header {
+																								.pricing-rate {
+																												font-size: 52px;
+																								}
+																				}
+																}
+												}
+												.pricing-table {
+																.pricing-header {
+																				.pricing-rate {
+																								font-size: 52px;
+																								sup {
+																												font-size: 18px;
+																								}
+																				}
+																}
+												}
+												.pricing-list {
+																ul {
+																				li {
+																								font-size: 13px;
+																								line-height: 1.2;
+																								padding: 10px;
+																				}
+																}
+												}
+								}
+				}
+}

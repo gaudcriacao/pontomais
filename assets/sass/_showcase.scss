@@ -1,0 +1,145 @@
+// ==========================================================================
+// SHOWCASE
+// ==========================================================================
+.Wallop,
+.Wallop-list {
+				position: relative;
+}
+.Wallop-list {
+				overflow: hidden;
+}
+.Wallop-item {
+				visibility: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+}
+.Wallop-item--current {
+				visibility: visible;
+				position: relative;
+}
+.Wallop-item {
+				height: 700px;
+				max-height: 700px;
+}
+.Wallop-item--current {
+				opacity: 0;
+				-webkit-transform: translateZ(0);
+				transform: translateZ(0);
+				-webkit-animation: show 0.8s ease-out forwards;
+				animation: show 0.8s ease-out forwards;
+        z-index: 8;
+}
+.Wallop-item--hideNext,
+.Wallop-item--hidePrevious {
+				visibility: visible;
+				-webkit-transform: translateZ(0);
+				transform: translateZ(0);
+				-webkit-animation: hide 0.8s ease-out forwards;
+				animation: hide 0.8s ease-out forwards;
+
+}
+.Wallop-item img {
+				max-height: 100%;
+				width: auto;
+				margin: 0 auto;
+				opacity: 0;
+}
+.Wallop-item--current img,
+.Wallop-item--showNext img,
+.Wallop-item--showPrevious img {
+				-webkit-animation: show 0.4s 0.4s ease-out forwards;
+				animation: show 0.4s 0.4s ease-out forwards;
+
+}
+.Wallop-item--showNext img,
+.Wallop-item--showPrevious img {
+				opacity: 0;
+				-webkit-transform: translateZ(0);
+				transform: translateZ(0);
+}
+.Wallop-item--hideNext img,
+.Wallop-item--hidePrevious img {
+				-webkit-animation: hide 0.4s ease-out forwards;
+				animation: hide 0.4s ease-out forwards;
+}
+.Wallop-buttonNext,
+.Wallop-buttonPrevious {
+				border: none;
+				webkit-appearance: none;
+				background: hsla(0,0%,100%,.6);
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				text-indent: -9999px;
+				position: absolute;
+				top: 50%;
+				-webkit-transform: translateY(-50%);
+				transform: translateY(-50%);
+        z-index: 9;
+}
+.Wallop-buttonNext:hover,
+.Wallop-buttonPrevious:hover {
+				cursor: pointer;
+				background: hsla(0,0%,100%,.85);
+}
+.Wallop-buttonNext:focus,
+.Wallop-buttonPrevious:focus {
+				outline: 0;
+}
+.Wallop-buttonNext:before,
+.Wallop-buttonPrevious:before {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				text-indent: 0;
+				font-size: 25px;
+				line-height: 0;
+}
+.Wallop-buttonPrevious {
+				left: 1pc;
+}
+.Wallop-buttonPrevious:before {
+				content: '\276E';
+}
+.Wallop-buttonNext {
+				right: 1pc;
+}
+.Wallop-buttonNext:before {
+				content: '\276F';
+}
+@-webkit-keyframes hide {
+				0% {
+								opacity: 1;
+				}
+				to {
+								opacity: 0;
+				}
+}
+@keyframes hide {
+				0% {
+								opacity: 1;
+				}
+				to {
+								opacity: 0;
+				}
+}
+@-webkit-keyframes show {
+				0% {
+								opacity: 0;
+				}
+				to {
+								opacity: 1;
+				}
+}
+@keyframes show {
+				0% {
+								opacity: 0;
+				}
+				to {
+								opacity: 1;
+				}
+}
