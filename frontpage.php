@@ -65,33 +65,27 @@ if (have_rows('vantagens')):
             <li class="item">
 
                   <div class="icone">
-                    <i class="glyphicon <?php
-        echo $iconeVantagem;
-?>"></i>
+                    <i class="glyphicon <?php echo $iconeVantagem; ?>"></i>
                   </div>
 
                 <div class="right-content">
-                  <h4 class="titulo"><?php
-        echo $tituloVantagem;
-?></h4>
+                  <h4 class="titulo"><?php echo $tituloVantagem; ?></h4>
                   <div class="conteudo">
-                    <?php
-        echo $sobreVantagem;
-?>
+                    <?php echo $sobreVantagem; ?>
                  </div>
                 </div>
 
             </li>
 
           <?php
-    endwhile;
-?>
+              endwhile;
+          ?>
 
           </ul>
 
         <?php
-endif;
-?>
+        endif;
+        ?>
 
           <div class="nav-list">
             <span class="slider-prev"></span><span class="slider-next hvr-float"></span>
@@ -123,40 +117,36 @@ endif;
            data-flickity-options='{ "prevNextButtons": true, "cellAlign": "center", "pageDots": false, "freeScroll": true, "wrapAround": true }'>
 
           <?php
-    while (have_rows('funcionalidades')):
-        the_row();
+              while (have_rows('funcionalidades')):
+                  the_row();
 
-        // vars
-        $tituloFunc = get_sub_field('titulo_func');
-        $iconeFunc  = get_sub_field('icone_func');
+                  // vars
+                  $tituloFunc = get_sub_field('titulo_func');
+                  $iconeFunc  = get_sub_field('icone_func');
 
-?>
+          ?>
 
               <div class="box-func">
 
                     <div class="icone-func">
-                      <i class="glyphicon <?php
-        echo $iconeFunc;
-?>"></i>
+                      <i class="glyphicon <?php echo $iconeFunc; ?>"></i>
                     </div>
 
                     <div class="title-func">
-                      <?php
-        echo $tituloFunc;
-?>
+                      <?php echo $tituloFunc; ?>
                    </div>
 
               </div>
 
           <?php
-    endwhile;
-?>
+              endwhile;
+          ?>
 
           </div>
 
         <?php
-endif;
-?>
+        endif;
+        ?>
 
       </div>
     </div>
@@ -168,63 +158,54 @@ endif;
 
           <!-- FUNCIONALIDADES CONTEUDO -->
           <?php
-if (have_rows('funcionalidades')):
-?>
+          if (have_rows('funcionalidades')):
+          ?>
 
             <div class="func-nav js-flickity"
              data-flickity-options='{ "asNavFor": ".func-main", "prevNextButtons": false, "contain": true, "pageDots": false, "draggable": false }'>
 
             <?php
-    while (have_rows('funcionalidades')):
-        the_row();
+                while (have_rows('funcionalidades')):
+                    the_row();
 
-        // vars
-        $tituloInternaFunc = get_sub_field('titulo_interna');
-        $sobreFunc         = get_sub_field('sobre_func');
-        $imgFunc           = get_sub_field('imagem_func');
+                    // vars
+                    $tituloInternaFunc = get_sub_field('titulo_interna');
+                    $sobreFunc         = get_sub_field('sobre_func');
+                    $imgFunc           = get_sub_field('imagem_func');
 
-?>
+            ?>
 
               <div class="content-func">
 
               <div class="row">
                 <div class="col-md-5 col-sm-12">
-                  <?php
-        if (!empty($imgFunc)):
-?>
+                  <?php if (!empty($imgFunc)): ?>
 
-                      <img src="<?php
-            echo $imgFunc['url'];
-?>" alt="<?php
-            echo $imgFunc['alt'];
-?>" class="img-responsive" />
+                      <img src="<?php echo $imgFunc['url']; ?>" alt="<?php echo $imgFunc['alt']; ?>" class="img-responsive" />
 
                   <?php
-        endif;
-?>
+                          endif;
+                  ?>
+
                </div>
                 <div class="col-md-7 col-sm-12">
-                  <h3 class="title-inner-func"><?php
-        echo $tituloInternaFunc;
-?></h3>
+                  <h3 class="title-inner-func"><?php echo $tituloInternaFunc; ?></h3>
 
-                  <div class="sobre-func"><?php
-        echo $sobreFunc;
-?></div>
+                  <div class="sobre-func"><?php echo $sobreFunc; ?></div>
                 </div>
               </div>
 
               </div>
 
             <?php
-    endwhile;
-?>
+                endwhile;
+            ?>
 
             </div>
 
           <?php
-endif;
-?>
+            endif;
+            ?>
 
         </div>
       </div>
@@ -241,35 +222,7 @@ endif;
         <h3 class="section-title text-center">Você economiza mais tempo</h3>
       </div>
     </div>
-    <div  class="row">
-      <div class="col-md-4 col-sm-4">
-        <div class="counter">
-        <div class="count_text">
-          <span class="number_count" data-from="0" data-to="5"></span>
-          <span class="sub_count">horas</span>
-        </div>
-        </div>
-        <span class="title-counter">de trabalho mês</span>
-      </div>
-      <div class="col-md-4 col-sm-4">
-        <div class="counter">
-        <div class="count_text">
-            <span class="number_count" data-from="0" data-to="8"></span>
-          <span class="sub_count">horas</span>
-        </div>
-        </div>
-        <span class="title-counter">Em fechamento<br>mensal de ponto</span>
-      </div>
-      <div class="col-md-4 col-sm-4">
-        <div class="counter">
-        <div class="count_text">
-          <span class="number_count" data-from="0" data-to="24"></span>
-          <span class="sub_count">horas</span>
-        </div>
-        </div>
-        <span class="title-counter">Em relatorios<br>mensais</span>
-      </div>
-    </div>
+  
   </div>
 </div>
 <!-- END CONTADOR -->
