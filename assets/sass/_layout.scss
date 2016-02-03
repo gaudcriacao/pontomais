@@ -291,24 +291,6 @@ body {
 // ==========================================================================
 // INPUTS
 // ==========================================================================
-.input-group {
-				.form-control:first-child {
-								@include border-radius(6px);
-								border-width: 2px;
-								border-color: #fff;
-								background: #fff;
-								box-shadow: none;
-				}
-				.input-sp {}
-				.input-group-btn {
-								&:last-child {
-												padding-left: 10px;
-												> .btn {
-																@include border-radius(6px);
-												}
-								}
-				}
-}
 .help-sm-block {
 				font-size: 12px;
 				margin-top: 10px;
@@ -358,6 +340,24 @@ body {
 												margin: 0;
 												text-align: left;
 												margin-bottom: 8px;
+								}
+				}
+				.input-group {
+								.form-control:first-child {
+												@include border-radius(6px);
+												border-width: 2px;
+												border-color: #fff;
+												background: #fff;
+												box-shadow: none;
+								}
+								.input-sp {}
+								.input-group-btn {
+												&:last-child {
+																padding-left: 10px;
+																> .btn {
+																				@include border-radius(6px);
+																}
+												}
 								}
 				}
 }
@@ -905,4 +905,14 @@ body {
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
 				background: $verde-mid;
+}
+// ==========================================================================
+// CALCULADORA
+// ==========================================================================
+.box-calculadora {
+				padding: 15px;
+				@include border-radius(10px);
+				background: $verde-mid;
+				display: inline-block;
+				width: 100%;
 }

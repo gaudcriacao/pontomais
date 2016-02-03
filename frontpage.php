@@ -222,7 +222,23 @@ if (have_rows('vantagens')):
         <h3 class="section-title text-center">Você economiza mais tempo</h3>
       </div>
     </div>
-  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box-calculadora">
+          <div class="form-group">
+            <label for="">Quanto você paga de contabilidade por mês?</label>
+            <input type="text" class="form-control input-lg" placeholder="Username" aria-describedby="sizing-addon1">
+          </div>
+          <div class="form-group">
+            <label for="">Quanto você paga de contabilidade por mês?</label>
+            <input type="text" class="form-control input-lg" placeholder="Username" aria-describedby="sizing-addon1">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+      </div>
+    </div>
   </div>
 </div>
 <!-- END CONTADOR -->
