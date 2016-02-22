@@ -248,9 +248,16 @@ function odin_enqueue_scripts() {
 	wp_enqueue_style( 'bxslider-css', $template_url . '/assets/extras/bxslider_2/jquery.bxslider.css', array(), null, 'all' );
 	wp_enqueue_script( 'bxslider-js', $template_url . '/assets/extras/bxslider_2/jquery.bxslider.js', array(), null, true );
 
-	//Carrousel
+	//Flickity
 	wp_enqueue_style( 'flickity-css', $template_url . '/assets/extras/flickity/flickity.css', array(), null, 'all' );
 	wp_enqueue_script( 'flickity-js', $template_url . '/assets/extras/flickity/flickity.pkgd.min.js', array(), null, true );
+	wp_enqueue_script( 'flickity-sync-js', $template_url . '/assets/extras/flickity/flickity-sync.js', array(), null, true );
+
+	// FILTER TABLE.
+	wp_enqueue_style( 'filter-css', $template_url . '/assets/extras/filter/jquery-ui-1.10.2.custom.min.css', array(), null, 'all' );
+	wp_enqueue_script( 'jquery-ui-js', $template_url . '/assets/extras/filter/jquery-ui-1.10.2.custom.min.js', array(), null, true );
+	wp_enqueue_script( 'filter-js', $template_url . '/assets/extras/filter/filter.js', array(), null, true );
+	wp_enqueue_script( 'sort-js', $template_url . '/assets/extras/filter/jquery.tinysort.min.js', array(), null, true );
 
 	//SHOWCASE
 	wp_enqueue_script( 'wallop-js', $template_url . '/assets/extras/wallop/js/Wallop.min.js', array(), null, true );
@@ -261,10 +268,10 @@ function odin_enqueue_scripts() {
 
 	// Main jQuery.
 	wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
-	
+
 	// Calculadora
 	wp_enqueue_script( 'calculadora', $template_url . '/assets/js/calculadora.js', array(), null, true );
-	
+
 	// Grunt watch livereload in the browser.
 	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
 

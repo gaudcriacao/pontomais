@@ -114,8 +114,8 @@ if (have_rows('vantagens')):
         if (have_rows('funcionalidades')):
         ?>
 
-          <div class="func-main js-flickity"
-           data-flickity-options='{ "prevNextButtons": true, "cellAlign": "center", "pageDots": false, "freeScroll": true, "wrapAround": true }'>
+          <div class="func-main gallery-a js-flickity"
+          data-flickity-options='{ "asNavFor": ".gallery-b", "contain": true, "pageDots": false, "cellAlign": "center", "freeScroll": true, "wrapAround": true }'>
 
           <?php
               while (have_rows('funcionalidades')):
@@ -162,8 +162,8 @@ if (have_rows('vantagens')):
           if (have_rows('funcionalidades')):
           ?>
 
-            <div class="func-nav js-flickity"
-             data-flickity-options='{ "asNavFor": ".func-main", "prevNextButtons": false, "contain": true, "pageDots": false, "draggable": false }'>
+            <div class="func-nav gallery-b js-flickity"
+             data-flickity-options='{ "prevNextButtons": false, "sync": ".gallery-a" }'>
 
             <?php
                 while (have_rows('funcionalidades')):
@@ -216,30 +216,34 @@ if (have_rows('vantagens')):
 <!-- END FUNCIONALIDADES -->
 
 <!-- BEGIN INFOGRAFICO -->
-<div id="section-info">
-	<h4 class="section-title text-center text-verd-dark">O fechamento de ponto não precisa te dar tanta dor de cabeça</h4>
-</div>
 <div class="section-infografico hidden-xs">
-  <div class="bg-left hidden-xs"></div>
-  <div class="bg-right hidden-xs"></div>
-  <div class="container">
-  <div class="row">
-      <div class="row-height">
-        <div class="col-md-6 col-height col-md-middle">
-          <h3 class="infografico-title text-center text-grey">
-            Fechamento de folha ponto hoje
-          </h3>
-        </div>
-        <div class="col-md-6 col-height col-md-middle">
-          <h3 class="infografico-title text-center text-white">
-            Fechamento com Pontomais
-          </h3>
+  <div class="container-fluid">
+    <div class="bg-left hidden-xs"></div>
+    <div class="bg-right hidden-xs"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="section-title text-center text-white">O fechamento de ponto não precisa te dar tanta dor de cabeça</h4>
         </div>
       </div>
-    </div>
     <div class="row">
-      <div class="col-md-12">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/infografico.png" alt="" class="img-responsive" />
+        <div class="row-height">
+          <div class="col-md-6 col-height col-md-middle">
+            <h3 class="infografico-title text-center text-white">
+              Sem Pontomais
+            </h3>
+          </div>
+          <div class="col-md-6 col-height col-md-middle">
+            <h3 class="infografico-title text-center text-white">
+              Com Pontomais
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/infografico.png" alt="" class="img-responsive" />
+        </div>
       </div>
     </div>
   </div>
@@ -270,7 +274,6 @@ if (have_rows('vantagens')):
       </div>
     </div>
   </div>
-</div>
 <!-- END CONTADOR -->
 
 <!-- BEGIN EXPERIMENTE -->
@@ -324,20 +327,108 @@ if (have_rows('vantagens')):
 </div>
 <!-- END EXPERIMENTE -->
 
+
 <!-- BEGIN PLANOS -->
 <div id="section-planos">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h4 class="section-title text-center text-verd-dark">Preços justos. Sem taxas e sem surpresas.</h4>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="section-title text-center text-verd-dark">Preços justos. Sem taxas e sem surpresas.</h4>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Numero de Funcionarios</h3>
+            <span id="price_range_label" style="margin:50px;">10-100</span>
+            <div id="price_slider"></div>
+            <input type="hidden" id="price_filter" value="10-100" />
+          </div>
+        </div>
     </div>
-  </div>
-  <section id="pricing-table">
+    <section id="pricing-table">
+        <div class="container">
+            <div class="row">
+                <div class="pricing">
+                    <div id="service_list" class="row-height"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        //<![CDATA[
+      var services = [
+        {
+          "nome": "FREE",
+          "preco": "<span>FREE para sempre</span>",
+          "users": 10,
+          "id": 1,
+        },
+        {
+            "nome": "MICRO",
+            "preco": "<sup>$</sup> 75 <span>/mês</span>",
+            "users": 50,
+            "id": 2,
+        },
+        {
+            "nome": "PEQUENO",
+            "preco": "<sup>$</sup> 99 <span>/mês</span>",
+            "users": 100,
+            "id": 3,
+        },
+        {
+            "nome": "MÉDIO",
+            "preco": "<sup>$</sup> 239 <span>/mês</span>",
+            "users": 300,
+            "id": 4,
+        },
+        {
+            "nome": "GRANDE",
+            "preco": "<sup>$</sup> 399 <span>/mês</span>",
+            "users": 500,
+            "id": 5,
+        },
+      ];
+        //]]>
+    </script>
+    <div class="clear"></div>
+</div>
+
+<script id="template" type="text/html">
+    <div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
+        <div class="pricing-table">
+            <div class="pricing-header">
+                <p class="pricing-title">
+                    <%= nome %>
+                </p>
+                <p class="pricing-rate">
+                    <%= preco %>
+                </p>
+            </div>
+            <div class="pricing-list">
+                <ul>
+                    <li><strong>Até <%= users %> colaboradores</strong></li>
+                    <li>Aplicativo Mobile</li>
+                    <li>Marcações de ponto via web/smartphone/tablet</li>
+                    <li>Painel de indicadores</li>
+                    <li>Fechamento de folha ponto</li>
+                    <li>Notificações de ocorrências e marcações</li>
+                    <li>Controle de hora extra</li>
+                    <li>Monitor de banco de horas</li>
+                    <li>Captura de dados do relógio ponto</li>
+                </ul>
+            </div>
+            <div class="assinar-table">
+                <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
+            </div>
+        </div>
+    </div>
+</script>
+  <!-- <section id="pricing-table">
               <div class="container">
                   <div class="row">
                       <div class="pricing">
                           <div class="row-height">
+
                             <div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
                                 <div class="pricing-table">
                                     <div class="pricing-header">
@@ -356,15 +447,15 @@ if (have_rows('vantagens')):
                                     </div>
                                 </div>
                             </div>
-							<div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
-                                <div class="pricing-table table-destaque">
+                            <div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
+                                <div class="pricing-table">
                                     <div class="pricing-header">
                                         <p class="pricing-title">Micro</p>
                                         <p class="pricing-rate"><sup>$</sup> 75 <span>/mês</span></p>
                                     </div>
                                     <div class="pricing-list">
                                         <ul>
-											<li><strong>Até 50 colaboradores</strong></li>                                            <li>Aplicativo Mobile</li>                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>
+                            <li><strong>Até 50 colaboradores</strong></li>                                            <li>Aplicativo Mobile</li>                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>
                                         </ul>
                                     </div>
                                     <div class="assinar-table">
@@ -390,7 +481,7 @@ if (have_rows('vantagens')):
                                     </div>
                                 </div>
                             </div>
-							<div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
+                            <div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
                                 <div class="pricing-table">
                                     <div class="pricing-header">
                                         <p class="pricing-title">Médio</p>
@@ -398,7 +489,7 @@ if (have_rows('vantagens')):
                                     </div>
                                     <div class="pricing-list">
                                         <ul>
-											<li><strong>Até 300 colaboradores</strong></li>                                            <li>Aplicativo Mobile</li>                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>
+                            <li><strong>Até 300 colaboradores</strong></li>                                            <li>Aplicativo Mobile</li>                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>
                                         </ul>
                                     </div>
                                     <div class="assinar-table">
@@ -406,11 +497,11 @@ if (have_rows('vantagens')):
                                     </div>
                                 </div>
                             </div>														<div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">                                <div class="pricing-table">                                    <div class="pricing-header">                                        <p class="pricing-title">Grande</p>                                        <p class="pricing-rate"><sup>$</sup> 399 <span>/mês</span></p>                                    </div>                                    <div class="pricing-list">                                        <ul>											<li><strong>Até 500 colaboradores</strong></li>                                            <li>Aplicativo Mobile</li>                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>                                        </ul>                                    </div>                                    <div class="assinar-table">                                      <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>                                    </div>                                </div>                            </div>
-                          </div>
+                        </div>
                       </div>
                   </div>
               </div>
-          </section>
+          </section> -->
 </div>
 <!-- END PLANOS -->
 

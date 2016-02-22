@@ -15,6 +15,28 @@ jQuery(document).ready(function($) {
     $(this).tab('show');
   });
 
+// FILTRO
+
+$('#price_filter').val('10-100');
+$("#price_slider").slider({
+  range:true,
+  min: 0,
+  max: 500,
+  values:[10, 100],
+  step: 100,
+  slide: function(event, ui) {
+    $("#price_range_label").html('' + ui.values[ 0 ] + ' - ' + ui.values[ 1 ] );
+    $('#price_filter').val(ui.values[0] + '-' + ui.values[1]).trigger('change');
+  }
+});
+
+FilterJS(services, "#service_list", {
+  template: '#template',
+  criterias:[
+    {field: 'users', ele: '#price_filter', type: 'range'},
+  ],
+});
+
   // Tooltip.
   $('.odin-tooltip').tooltip();
 
