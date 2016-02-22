@@ -15,24 +15,33 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if ( ! get_option( 'site_icon' ) ) : ?>
-		<link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" rel="shortcut icon" />
+		<link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png" rel="shortcut icon" />
 	<?php endif; ?>
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/html5.js"></script>
 	<![endif]-->
 	<script src="https://use.typekit.net/uhz7hoy.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 	<?php wp_head(); ?>
+	
+	<!-- GAnalytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-73905426-1', 'auto');
+	  ga('create', 'UA-73874945-1', 'auto', 'gaud');
+	  ga('send', 'pageview');
+	  ga('gaud.send', 'pageview');
+
+	</script>
+	
 </head>
 
 <body <?php body_class(); ?>>
-
-	<a id="skippy" class="sr-only sr-only-focusable" href="#content">
-		<div class="container">
-			<span class="skiplink-text"><?php _e( 'Skip to content', 'odin' ); ?></span>
-		</div>
-	</a>
 
 <header id="header" class="data-scroll-header">
 <!-- NAV -->
@@ -68,8 +77,8 @@
 					<div class="col-md-3 hidden-sm hidden-ipad">
 						<div class="login-menu">
 							<ul>
-								<li><a href="#">Entrar</a></li>
-								<li><a href="#" class="btn btn-md btn-bold btn-verde-mid-outline">Experimente</a></li>
+								<li><a href="http://app.pontomaisweb.com.br/#/acessar">Entrar</a></li>
+								<li><a href="http://app.pontomaisweb.com.br/#/cadastrar" class="btn btn-md btn-bold btn-verde-mid-outline">Experimente</a></li>
 							</ul>
 						</div>
 					</div>

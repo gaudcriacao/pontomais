@@ -13,20 +13,21 @@ get_header();
   };
    ?>
    <?php if(is_mobile()) {
+     putRevSlider( 'mobile' );
     };
     ?>
 </div>
 <!-- END SHOWCASE -->
 
 <!-- BEGIN VANTAGENS -->
-<div class="pre-section-solucoes">
+<div id="solu" class="pre-section-solucoes">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="intro-section">
-          <h3 class="intro-title"><?php
+          <h1 class="intro-title"><?php
           the_field('titulo_secao_vantagens');
-          ?></h3>
+          ?></h1>
           <div class="intro-content">
             <?php
             the_field('texto_secao_vantagens');
@@ -65,7 +66,7 @@ if (have_rows('vantagens')):
             <li class="item">
 
                   <div class="icone">
-                    <i class="glyphicon <?php echo $iconeVantagem; ?>"></i>
+                    <?php echo $iconeVantagem; ?>
                   </div>
 
                 <div class="right-content">
@@ -102,7 +103,7 @@ if (have_rows('vantagens')):
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3 class="section-title text-white text-center">FUNCIONALIDADES</h3>
+        <h3 class="section-title text-white text-center">Mas afinal, o que o Pontomais tem a mais?</h3>
       </div>
     </div>
     <div class="row">
@@ -129,7 +130,7 @@ if (have_rows('vantagens')):
               <div class="box-func">
 
                     <div class="icone-func">
-                      <i class="glyphicon <?php echo $iconeFunc; ?>"></i>
+					  <?php echo $iconeFunc; ?>
                     </div>
 
                     <div class="title-func">
@@ -214,29 +215,58 @@ if (have_rows('vantagens')):
 </div>
 <!-- END FUNCIONALIDADES -->
 
+<!-- BEGIN INFOGRAFICO -->
+<div id="section-info">
+	<h4 class="section-title text-center text-verd-dark">O fechamento de ponto não precisa te dar tanta dor de cabeça</h4>
+</div>
+<div class="section-infografico hidden-xs">
+  <div class="bg-left hidden-xs"></div>
+  <div class="bg-right hidden-xs"></div>
+  <div class="container">
+  <div class="row">
+      <div class="row-height">
+        <div class="col-md-6 col-height col-md-middle">
+          <h3 class="infografico-title text-center text-grey">
+            Fechamento de folha ponto hoje
+          </h3>
+        </div>
+        <div class="col-md-6 col-height col-md-middle">
+          <h3 class="infografico-title text-center text-white">
+            Fechamento com Pontomais
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/infografico.png" alt="" class="img-responsive" />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END INFOGRAFICO -->
+
 <!-- BEGIN CONTADOR -->
-<div id="pick-three" class="section-contador">
+<div class="section-contador">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <h3 class="section-title text-center">Você economiza mais tempo</h3>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="box-calculadora">
-          <div class="form-group">
-            <label for="">Quanto você paga de contabilidade por mês?</label>
-            <input type="text" class="form-control input-lg" placeholder="Username" aria-describedby="sizing-addon1">
-          </div>
-          <div class="form-group">
-            <label for="">Quanto você paga de contabilidade por mês?</label>
-            <input type="text" class="form-control input-lg" placeholder="Username" aria-describedby="sizing-addon1">
-          </div>
+	  <div class="row-height">
+        <div class="col-md-6 col-height col-md-middle">
+          <p class="infografico-title text-center text-grey">
+            Informe a quantidade de funcionários
+          </p>
+			<input class="form-control input-lg input-sp text-center" type="text" name="txt" value="" oninput="calcular(this.value)">
         </div>
-      </div>
-      <div class="col-md-6">
-
+        <div class="col-md-6 col-height col-md-middle">
+          <p class="infografico-title text-center text-grey">
+            Veja quanto tempo você economiza
+          </p>
+		  <h3 class="section-title text-center text-verd-dark" id="qtdresultado">0 minutos</h3>
+		  </div>
+        </div>
       </div>
     </div>
   </div>
@@ -285,8 +315,8 @@ if (have_rows('vantagens')):
           </ul>
         </div>
         <div class="col-md-5 col-md-height col-md-middle text-center">
-          <a href="#" class="btn btn-xl btn-default museo-slab">Experimente agora!</a>
-          <small class="assist-btn">Cadastre-se e experimente o<br>PontoMais por 14 dias gratuitamente.</small>
+          <a href="http://app.pontomaisweb.com.br/#/cadastrar" class="btn btn-xl btn-default">Experimente agora!</a>
+          <small class="assist-btn">Cadastre-se e experimente o<br>Pontomais por 14 dias gratuitamente.</small>
         </div>
       </div>
     </div>
@@ -299,7 +329,7 @@ if (have_rows('vantagens')):
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h4 class="section-title text-center text-verd-dark">PLANOS PENSADOS PARA SEU NEGÓCIO</h4>
+        <h4 class="section-title text-center text-verd-dark">Preços justos. Sem taxas e sem surpresas.</h4>
       </div>
     </div>
   </div>
@@ -308,67 +338,74 @@ if (have_rows('vantagens')):
                   <div class="row">
                       <div class="pricing">
                           <div class="row-height">
-                            <div class="col-md-4 col-sm-4 col-xs-12 col-sm-height">
+                            <div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
                                 <div class="pricing-table">
                                     <div class="pricing-header">
-                                        <p class="pricing-title">Básico</p>
-                                        <p class="pricing-rate"><sup>$</sup> 49 <span>/mês</span></p>
+                                        <p class="pricing-title">FREE</p>
+                                        <p class="pricing-rate"><span>FREE para sempre</span></p>
                                     </div>
                                     <div class="pricing-list">
                                         <ul>
-                                            <li><strong>Cadastrar até 10 colaboradores</strong></li>
-                                            <li>Receber Marcações na web e celular</li>
-                                            <li>Receber Aviso de Ausências</li>
+                                            <li><strong>Até 10 colaboradores</strong></li>
+                                            <li>Aplicativo Mobile</li>
+                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>
                                         </ul>
                                     </div>
                                     <div class="assinar-table">
-                                      <a href="#">Assinar</a>
+                                      <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 col-sm-height">
+							<div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
                                 <div class="pricing-table table-destaque">
                                     <div class="pricing-header">
-                                        <p class="pricing-title">Pequena</p>
-                                        <p class="pricing-rate"><sup>$</sup> 49 <span>/mês</span></p>
+                                        <p class="pricing-title">Micro</p>
+                                        <p class="pricing-rate"><sup>$</sup> 75 <span>/mês</span></p>
                                     </div>
                                     <div class="pricing-list">
                                         <ul>
-                                            <li><strong>Cadastrar até 20 colaboradores</strong></li>
-                                            <li>Monitorar Banco de Horas</li>
-                                            <li>Alarmes de Intervalos Irregulares</li>
-                                            <li>Controlar Horas Extras</li>
-                                            <li>Receber Aviso de Ausências</li>
-                                            <li>Capturar Dados dos Relógios Ponto</li>
+											<li><strong>Até 50 colaboradores</strong></li>                                            <li>Aplicativo Mobile</li>                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>
                                         </ul>
                                     </div>
                                     <div class="assinar-table">
-                                      <a href="#">Assinar</a>
+                                      <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 col-sm-height">
+                            <div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
                                 <div class="pricing-table">
                                     <div class="pricing-header">
-                                        <p class="pricing-title">Média</p>
-                                        <p class="pricing-rate"><sup>$</sup> 49 <span>/mês</span></p>
+                                        <p class="pricing-title">Pequeno</p>
+                                        <p class="pricing-rate"><sup>$</sup> 99 <span>/mês</span></p>
                                     </div>
                                     <div class="pricing-list">
                                         <ul>
-                                            <li><strong>Cadastrar até 50 colaboradores</strong></li>
-                                            <li>Monitorar Banco de Horas</li>
-                                            <li>Alarmes de Intervalos Irregulares</li>
-                                            <li>Controlar Horas Extras</li>
-                                            <li>Receber Aviso de Ausências</li>
-                                            <li>Capturar Dados dos Relógios Ponto</li>
-                                            <li>Enviar dados para seu ERP</li>
+                                            <li><strong>Até 100 colaboradores</strong></li>
+                                            <li>Aplicativo Mobile</li>
+                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>
                                         </ul>
                                     </div>
                                     <div class="assinar-table">
-                                      <a href="#">Assinar</a>
+                                      <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
                                     </div>
                                 </div>
                             </div>
+							<div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">
+                                <div class="pricing-table">
+                                    <div class="pricing-header">
+                                        <p class="pricing-title">Médio</p>
+                                        <p class="pricing-rate"><sup>$</sup> 239 <span>/mês</span></p>
+                                    </div>
+                                    <div class="pricing-list">
+                                        <ul>
+											<li><strong>Até 300 colaboradores</strong></li>                                            <li>Aplicativo Mobile</li>                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>
+                                        </ul>
+                                    </div>
+                                    <div class="assinar-table">
+                                      <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
+                                    </div>
+                                </div>
+                            </div>														<div class="col-md-3 col-sm-3 col-xs-12 col-sm-height">                                <div class="pricing-table">                                    <div class="pricing-header">                                        <p class="pricing-title">Grande</p>                                        <p class="pricing-rate"><sup>$</sup> 399 <span>/mês</span></p>                                    </div>                                    <div class="pricing-list">                                        <ul>											<li><strong>Até 500 colaboradores</strong></li>                                            <li>Aplicativo Mobile</li>                                            <li>Marcações de ponto via web/smartphone/tablet</li>											<li>Painel de indicadores</li>											<li>Fechamento de folha ponto</li>											<li>Notificações de ocorrências e marcações</li>											<li>Controle de hora extra</li>											<li>Monitor de banco de horas</li>											<li>Captura de dados do relógio ponto</li>                                        </ul>                                    </div>                                    <div class="assinar-table">                                      <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>                                    </div>                                </div>                            </div>
                           </div>
                       </div>
                   </div>
@@ -431,59 +468,6 @@ if (have_rows('vantagens')):
 </div>
 </div>
 <!-- END NEWS -->
-<!-- BEGIN DEPOIMENTOS -->
-<!-- BEGIN DEPOIMENTOS -->
-   <!-- <div id="section-depoimentos">
-     <div class="container">
-       <div class="row">
-         <div class="col-md-12">
-           <h2 class="text-center dark-blue-text">Veja o que estão falando da gente</h2>
-           <div class="depoimentos-list">
-             <?php
- 							$args_depo = array (
- 								'post_type'              => array( 'depoimento' ),
- 								'nopaging'               => false,
- 								'posts_per_page'         => '9',
- 								'order'                  => 'DESC',
- 								'orderby'                => 'rand',
- 							);
-
- 							$depoimentos = new WP_Query( $args_depo );
- 						?>
-
-            <?php if ( $depoimentos->have_posts() ) : ?>
-
-							<?php while ( $depoimentos->have_posts() ) : $depoimentos->the_post(); ?>
-
-
-                <div class="depoimento-item">
-                  <div class="header-depoimento">
-                    <div class="avatar">
-                      <?php
-  										if ( has_post_thumbnail() ) { the_post_thumbnail('thumbnail'); }
-  										?>
-                    </div>
-                    <h4 class="depoimento-nome"><?php the_title(); ?></h4>
-                    <h5 class="depoimento-local"><?php the_field('empresa_depo'); ?></h5>
-                  </div>
-                  <div class="depoimento-content">
-                    <?php the_content(); ?>
-                  </div>
-                </div>
-
-							<?php endwhile; ?>
-
-
-						<?php else : ?>
-							<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-						<?php endif; ?>
-
-           </div>
-         </div>
-       </div>
-     </div>
-   </div> -->
-   <!-- END DEPOIMENTOS -->
 <?php
 get_footer();
 ?>

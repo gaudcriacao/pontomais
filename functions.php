@@ -217,12 +217,12 @@ function odin_enqueue_scripts() {
 	// jQuery.
 	wp_enqueue_script( 'jquery' );
 
+
 	// Bootstrap.
 	wp_enqueue_script( 'bootstrap', $template_url . '/assets/js/libs/bootstrap.min.js', array(), null, true );
 
 	// FitVids.
 	wp_enqueue_script( 'fitvids', $template_url . '/assets/js/libs/jquery.fitvids.js', array(), null, true );
-
 
 	// ANchorScroll.
 	wp_enqueue_script( 'anchor-js', $template_url . '/assets/extras/anchor/smooth-scroll.js', array(), null, true );
@@ -259,11 +259,12 @@ function odin_enqueue_scripts() {
 	wp_enqueue_style( 'hover-css', $template_url . '/assets/extras/hover/hover.css', array(), null, 'all' );
 
 
-
-
 	// Main jQuery.
 	wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
-
+	
+	// Calculadora
+	wp_enqueue_script( 'calculadora', $template_url . '/assets/js/calculadora.js', array(), null, true );
+	
 	// Grunt watch livereload in the browser.
 	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
 
@@ -368,3 +369,22 @@ function content($limit) {
   $content = str_replace(']]>', ']]&gt;', $content);
   return $content;
 }
+
+add_action( 'init', 'novocadastro_cookie');
+function novocadastro_cookie(){
+ 	if(isset($_POST['emailcadastro'])) {
+		$tempovida = time()+3600;
+		$ck_content = $_POST['emailcadastro'];
+		setcookie( 'pontomaisUserEmail', $ck_content, $tempovida, "", "pontomaisweb.com.br");
+		header("Location: http://app.pontomaisweb.com.br/#/cadastrar");
+    }
+}
+/*
+add_action( 'wp_head', 'my_getcookie' );
+function my_getcookie() {
+	if(isset($_COOKIE['pontomaisUserEmail'])){
+		$alert = $_COOKIE['pontomaisUserEmail'];
+		echo "<script type='text/javascript'>alert('$alert')</script>";
+	}
+}
+*/
