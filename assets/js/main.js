@@ -1,66 +1,51 @@
 jQuery(document).ready(function($) {
-  // fitVids.
+
+  /*==========================================================================
+FITVID
+  ========================================================================== */
   $('.entry-content').fitVids();
 
-  // Responsive wp_video_shortcode().
+  /*==========================================================================
+Responsive wp_video_shortcode().
+  ========================================================================== */
   $('.wp-video-shortcode').parent('div').css('width', 'auto');
 
   /**
    * Odin Core shortcodes
    */
 
-  // Tabs.
+   /*==========================================================================
+   TABS
+   ========================================================================== */
   $('.odin-tabs a').click(function(e) {
     e.preventDefault();
     $(this).tab('show');
   });
 
-// FILTRO
-
-$('#price_filter').val('10-100');
-$("#price_slider").slider({
-  range:true,
-  min: 0,
-  max: 500,
-  values:[10, 100],
-  step: 100,
-  slide: function(event, ui) {
-    $("#price_range_label").html('' + ui.values[ 0 ] + ' - ' + ui.values[ 1 ] );
-    $('#price_filter').val(ui.values[0] + '-' + ui.values[1]).trigger('change');
-  }
-});
-
-FilterJS(services, "#service_list", {
-  template: '#template',
-  criterias:[
-    {field: 'users', ele: '#price_filter', type: 'range'},
-  ],
-});
-
   // Tooltip.
   $('.odin-tooltip').tooltip();
 
-	/*==========================================================================
-	DEPOIMENTOS
-	========================================================================== */
-	$('.depoimentos-list').owlCarousel({
-		loop: true,
-		margin: 10,
-		responsiveClass:true,
-		dots: true,
-		nav: false,
-		responsive: {
-			0: {
-				items: 1,
-			},
-			600: {
-				items: 1,
-			},
-			1000: {
-				items: 3,
-			}
-		}
-	});
+  /*==========================================================================
+  DEPOIMENTOS
+  ========================================================================== */
+  $('.depoimentos-list').owlCarousel({
+    loop: true,
+    margin: 10,
+    responsiveClass: true,
+    dots: true,
+    nav: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 1,
+      },
+      1000: {
+        items: 3,
+      }
+    }
+  });
 
 
   //Equalize
@@ -97,6 +82,37 @@ FilterJS(services, "#service_list", {
       screen: 1024,
       slides: 3
     }]
+  });
+
+  /*==========================================================================
+  FILTRO PLANOS
+  ========================================================================== */
+  // init Isotope
+  var $grid = $('#planos-grid').isotope({
+    itemSelector: '.plano',
+    layoutMode: 'fitRows'
+  });
+  $grid.isotope({ filter: '.10-100' });
+  // filter functions
+  var filterFns = {
+
+  };
+  // bind filter button click
+  $('.filters-button-group').on('click', 'button', function() {
+    var filterValue = $(this).attr('data-filter');
+    // use filterFn if matches value
+    filterValue = filterFns[filterValue] || filterValue;
+    $grid.isotope({
+      filter: filterValue
+    });
+  });
+  // change is-checked class on buttons
+  $('.button-group').each(function(i, buttonGroup) {
+    var $buttonGroup = $(buttonGroup);
+    $buttonGroup.on('click', 'button', function() {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      $(this).addClass('is-checked');
+    });
   });
 
   /*==========================================================================

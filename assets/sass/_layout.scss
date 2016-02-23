@@ -423,7 +423,7 @@ body {
       i {
         width: 72px;
         height: 72px;
-        line-height: 63px;
+        line-height: 72px;
         background: $verde-mid;
         @include border-radius(50px);
         background-clip: padding-box;
@@ -486,9 +486,9 @@ body {
 .box-func {
   background-color: rgba(255, 255, 255, .15);
   @include border-radius(15px);
-  padding: 15px;
+  padding: 32px 15px;
   width: 25%;
-  height: 140px;
+  height: 180px;
   margin: 0 5px;
   .icone-func {
     color: #ffffff;
@@ -632,7 +632,7 @@ body {
 // PLANOS
 // ==========================================================================
 #section-planos {
-  padding: 60px 0;
+  padding: 50px 0 60px;
   .section-title {
     font-family: $nexa-light;
     font-size: 34px;
