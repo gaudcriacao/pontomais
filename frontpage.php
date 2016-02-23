@@ -163,7 +163,7 @@ if (have_rows('vantagens')):
           ?>
 
             <div class="func-nav gallery-b js-flickity"
-             data-flickity-options='{ "prevNextButtons": false, "sync": ".gallery-a", "freeScroll": true, "wrapAround": true }'>
+             data-flickity-options='{ "prevNextButtons": false, "sync": ".gallery-a", "freeScroll": false, "wrapAround": true, "pageDots": false }'>
 
             <?php
                 while (have_rows('funcionalidades')):

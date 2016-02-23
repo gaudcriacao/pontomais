@@ -1,222 +1,240 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-				body {
-								margin-bottom: 390px;
-				}
-				.section-title {
-								font-family: $nexa-regular;
-								font-size: 28px;
-				}
-				//--------------------------------------------------------------------------------------------------------
-				// MOBILE NAV
-				//--------------------------------------------------------------------------------------------------------
-				.overlay {
-								nav {
-												font-size: 28px;
-								}
-								.overlay-close {
-												width: 30px;
-												height: 30px;
-												right: 30px;
-												top: 15px;
-												background-size: cover;
-								}
-				}
-				//--------------------------------------------------------------------------------------------------------
-				// HEADER
-				//--------------------------------------------------------------------------------------------------------
-				#header {
-								.navbar-brand {
-												width: 70%;
-												padding: 15px 10px;
-												margin-left: -10px;
-												img {
-																width: 100%;
-												}
-								}
-								.navbar-toggle {
-												display: block;
-												margin: 24px 15px 0 0;
-								}
-				}
-				//--------------------------------------------------------------------------------------------------------
-				// INTRO
-				//--------------------------------------------------------------------------------------------------------
-				.intro {
-								.wrapper {}
-								.wrapper.top {
-												padding: 20px 20px 320px;
-								}
-								.hero-wrapper {
-												width: 100%;
-												h2 {
-																font-size: 52px;
-																line-height: 50px;
-																width: 100%;
-																span {
-																				font-size: 58px;
-																}
-												}
-												p.subline {
-																font-size: 18px;
-												}
-								}
-								.intro-image {
-												width: 120%;
-												right: auto;
-												left: 50%;
-												margin-left: -50%;
-												bottom: auto;
-												top: 50%;
-								}
-								.intro-signup {
-												.btn {
-																font-size: 18px;
-																width: 100%;
-												}
-								}
-				}
-				//--------------------------------------------------------------------------------------------------------
-				// VANTAGENS
-				//--------------------------------------------------------------------------------------------------------
-				.pre-section-solucoes {
-								padding: 25px 0 0;
-								.intro-section {
-												.intro-title {
-																font-family: $nexa-bold;
-																font-size: 20px;
-												}
-												.intro-content {
-																font-size: 16px;
-																line-height: 1.45;
-												}
-								}
-				}
-				.section-solucoes {
-								padding: 30px 0 0;
-								background: #E9E9E9;
-				}
-				.solucoes-list {
-								.item {
-												.icone {
-																display: block;
-																margin-bottom: 20px;
-																i {}
-												}
-												.right-content {
-																text-align: center;
-																display: block;
-																padding-left: 0;
-																.titulo {
-																				font-size: 20px;
-																}
-																.conteudo {
-																				font-size: 16px;
-																}
-												}
-								}
-				}
-				//--------------------------------------------------------------------------------------------------------
-				// FUNCIONALIDADES
-				//--------------------------------------------------------------------------------------------------------
-				.flickity-prev-next-button {
-								height: 70px;
-								width: 50px;
-				}
-				.flickity-prev-next-button.previous {
-								left: -20px !important;
-				}
-				.flickity-prev-next-button.next {
-								right: -20px !important;
-				}
-				.box-func {
-								width: 100%;
-								height: 180px;
-								.icone-func {
-												padding-top: 0;
-								}
-								.title-func {}
-				}
-				.content-func {
-								.title-inner-func {
-												font-size: 22px;
-												padding: 0 0 10px;
-								}
-								.sobre-func {
-												font-size: 18px;
-								}
-				}
-				//--------------------------------------------------------------------------------------------------------
-				// PREÇOS
-				//--------------------------------------------------------------------------------------------------------
-				#section-planos {
-								padding: 40px 0;
-								.section-title {
-												font-family: $nexa-regular;
-												font-size: 26px;
-								}
-				}
-				#pricing-table {
-								padding-top: 40px;
-								.pricing {
-												.pricing-table {
-																margin-bottom: 15px;
-												}
-												.table-destaque {
-																transform: scale(1);
-												}
-								}
-				}
-				//--------------------------------------------------------------------------------------------------------
-				// EXPERIMENTE
-				//--------------------------------------------------------------------------------------------------------
-				#section-experimente {
-								padding: 0 0 70px;
-								.section-title {
-												margin: 70px 0 40px;
-								}
-								.btn-xl {
-												width: 100%;
-												font-size: 22px;
-								}
-								.assist-btn {
-												font-family: $nexa-regular;
-												font-size: 16px;
-								}
-				}
-				//--------------------------------------------------------------------------------------------------------
-				// HOME NEWS
-				//--------------------------------------------------------------------------------------------------------
-				#section-news {
-								.home-news {
-												padding: 15px 0;
-												border-bottom: 1px solid #ddd;
-								}
-				}
-				//--------------------------------------------------------------------------------------------------------
-				// FOOTER
-				//--------------------------------------------------------------------------------------------------------
-				#footer {
-								height: 400px;
-								.container-footer {
-												padding: 50px 0 30px;
-								}
-								.footer-logo {
-												img {
-																margin: 0 auto;
-																max-width: 70%;
-												}
-								}
-								.footer-telefone {
-												transform: scale(.9);
-								}
-								.footer-social {
-												margin-top: 40px;
-								}
-				}
-				#copyright {
-								font-size: 10px;
-				}
+  body {
+    margin-bottom: 390px;
+    max-width: 100%;
+  }
+  .section-title {
+    font-family: $nexa-regular;
+    font-size: 28px;
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // MOBILE NAV
+  //--------------------------------------------------------------------------------------------------------
+  .overlay {
+    nav {
+      font-size: 28px;
+    }
+    .overlay-close {
+      width: 30px;
+      height: 30px;
+      right: 30px;
+      top: 15px;
+      background-size: cover;
+    }
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // HEADER
+  //--------------------------------------------------------------------------------------------------------
+  #header {
+    .navbar-brand {
+      width: 70%;
+      padding: 15px 10px;
+      margin-left: -10px;
+      img {
+        width: 100%;
+      }
+    }
+    .navbar-toggle {
+      display: block;
+      margin: 24px 15px 0 0;
+    }
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // INTRO
+  //--------------------------------------------------------------------------------------------------------
+  .intro {
+    .wrapper {}
+    .wrapper.top {
+      padding: 20px 20px 320px;
+    }
+    .hero-wrapper {
+      width: 100%;
+      h2 {
+        font-size: 52px;
+        line-height: 50px;
+        width: 100%;
+        span {
+          font-size: 58px;
+        }
+      }
+      p.subline {
+        font-size: 18px;
+      }
+    }
+    .intro-image {
+      width: 120%;
+      right: auto;
+      left: 50%;
+      margin-left: -50%;
+      bottom: auto;
+      top: 50%;
+    }
+    .intro-signup {
+      .btn {
+        font-size: 18px;
+        width: 100%;
+      }
+    }
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // VANTAGENS
+  //--------------------------------------------------------------------------------------------------------
+  .pre-section-solucoes {
+    padding: 25px 0 0;
+    .intro-section {
+      .intro-title {
+        font-family: $nexa-bold;
+        font-size: 20px;
+      }
+      .intro-content {
+        font-size: 15px;
+        line-height: 1.45;
+      }
+    }
+  }
+  .section-solucoes {
+    padding: 30px 0 0;
+    background: #E9E9E9;
+  }
+  .solucoes-list {
+    .item {
+      .icone {
+        display: block;
+        margin-bottom: 20px;
+        i {}
+      }
+      .right-content {
+        text-align: center;
+        display: block;
+        padding-left: 0;
+        .titulo {
+          font-size: 20px;
+        }
+        .conteudo {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // FUNCIONALIDADES
+  //--------------------------------------------------------------------------------------------------------
+  .flickity-prev-next-button {
+    height: 70px;
+    width: 50px;
+  }
+  .flickity-prev-next-button.previous {
+    left: -20px !important;
+  }
+  .flickity-prev-next-button.next {
+    right: -20px !important;
+  }
+  .box-func {
+    width: 100%;
+    height: 180px;
+    .icone-func {
+      padding-top: 0;
+    }
+    .title-func {}
+  }
+  .content-func {
+    .title-inner-func {
+      font-size: 22px;
+      padding: 0 0 10px;
+    }
+    .sobre-func {
+      font-size: 18px;
+    }
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // PREÇOS
+  //--------------------------------------------------------------------------------------------------------
+  #section-planos {
+    padding: 40px 0;
+    .section-title {
+      font-family: $nexa-regular;
+      font-size: 26px;
+    }
+  }
+  #pricing-table {
+    padding-top: 5px;
+    .pricing {
+      .pricing-table {
+        margin-bottom: 15px;
+      }
+      .table-destaque {
+        transform: scale(1);
+      }
+    }
+    .filters-button-group {
+      span {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // EXPERIMENTE
+  //--------------------------------------------------------------------------------------------------------
+  #section-experimente {
+    padding: 0 0 70px;
+    .section-title {
+      margin: 70px 0 40px;
+    }
+    .btn-xl {
+      width: 100%;
+      font-size: 22px;
+    }
+    .assist-btn {
+      font-family: $nexa-regular;
+      font-size: 16px;
+    }
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // HOME NEWS
+  //--------------------------------------------------------------------------------------------------------
+  #section-news {
+		.header-title{
+			padding: 20px 0;
+			.section-title{
+				font-family: $nexa-regular;
+				font-size: 24px;
+			}
+		}
+    .home-news {
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+    }
+		.news-container{
+			padding: 20px 0 30px;
+		}
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // FOOTER
+  //--------------------------------------------------------------------------------------------------------
+  #footer {
+    height: 400px;
+    .container-footer {
+      padding: 50px 0 30px;
+    }
+    .footer-logo {
+      img {
+        margin: 0 auto;
+        max-width: 70%;
+      }
+    }
+    .footer-telefone {
+      transform: scale(.9);
+    }
+    .footer-social {
+      margin-top: 40px;
+    }
+  }
+  #copyright {
+    font-size: 10px;
+  }
 }
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : 321px) {}
