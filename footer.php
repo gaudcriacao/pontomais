@@ -24,7 +24,7 @@
 					<div class="col-md-6 col-sm-6 col-md-height col-md-middle">
 						<div class="footer-telefone">
 							<span>Alguma dúvida?</span>
-							<a href="tel:4136218423">41 3621.8423</a>
+							<a href="tel:4136218423">41 4063.9567</a>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-12 col-md-height col-md-middle">
@@ -77,7 +77,7 @@
 			?>
 		</nav>
 	</div>
-	
+
 	<?php wp_footer(); ?>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/e5080e17-8c6a-49c9-9180-da8c1c34b38f-loader.js"></script>

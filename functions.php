@@ -64,6 +64,7 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		register_nav_menus(
 			array(
 				'main-menu' => __( 'Main Menu', 'odin' ),
+				'pages-menu' => __( 'Pages Menu', 'odin' ),
 				'mobile-menu' => __( 'Mobile Menu', 'odin' )
 			)
 		);

@@ -343,12 +343,67 @@ if (have_rows('vantagens')):
           <div class="pricing">
             <div class="button-group filters-button-group">
               <span>Nº de Funcionários</span>
-              <button class="button is-checked" data-filter=".10-100">Até 100</button>
-              <button class="button" data-filter=".50-300">Até 300</button>
-              <button class="button" data-filter=".up-300">Acima de 300</button>
+              <button class="button is-checked" data-filter=".10, .50, .100">Até 100</button>
+              <button class="button" data-filter=".50, .100, .300">Até 300</button>
+              <button class="button" data-filter=".100, .300, .500">Acima de 300</button>
             </div>
             <div id="planos-grid">
-              <div class="plano col-md-4  10-100">
+              <?php
+                $args_planos = array (
+                  'post_type'              => array( 'plano' ),
+                  'posts_per_page'         => '5',
+                  'order'                  => 'DESC',
+                  'orderby'                => 'menu_order',
+                );
+
+                $plano_list = new WP_Query( $args_planos );
+              ?>
+
+              <?php if ( $plano_list->have_posts() ) : ?>
+
+                <?php while ( $plano_list->have_posts() ) : $plano_list->the_post(); ?>
+
+                  <div class="plano col-md-4 <?php echo the_field('qtd_de_colaboradores'); ?>">
+                    <div class="pricing-table">
+                      <div class="pricing-header">
+                        <p class="pricing-title"><?php the_title(); ?></p>
+                        <p class="pricing-rate">
+                          <!-- FREE -->
+                          <?php if( get_field('gratis_price') ): ?>
+                          <span class="price-free">
+                              <?php the_field('gratis_price'); ?>
+                          </span>
+                          <?php endif; ?>
+                          <!-- PREÇO -->
+                          <?php if( get_field('preco_plano') ): ?>
+                          <sup>$</sup>
+                              <?php the_field('preco_plano'); ?>
+                          <span>/mês</span>
+                          <?php endif; ?>
+                        </p>
+                      </div>
+                      <div class="pricing-list">
+                        <ul>
+                          <li><strong>Até <?php the_field('qtd_de_colaboradores'); ?> colaboradores</strong></li>
+                          <?php while( have_rows('lista-beneficios') ): the_row(); ?>
+                                <li><?php the_sub_field('beneficio'); ?></li>
+                            <?php endwhile; ?>
+                        </ul>
+                      </div>
+                      <div class="assinar-table">
+                        <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
+                      </div>
+                    </div>
+                  </div>
+
+                <?php endwhile; ?>
+
+
+              <?php else : ?>
+                <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+              <?php endif; ?>
+
+              <!-- <div class="plano col-md-4  10-100">
                 <div class="pricing-table">
                   <div class="pricing-header">
                     <p class="pricing-title">FREE</p>
@@ -465,7 +520,7 @@ if (have_rows('vantagens')):
                   </div>
                   <div class="assinar-table"> <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a> </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

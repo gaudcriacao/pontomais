@@ -8,8 +8,9 @@
 $verde-dark: #2d888c;
 $verde-mid: #59c09b;
 $verde-light: #7cc89c;
-$grey: #606060;
-$grey-light: #6f6f6f;
+$grey: #5b5b5b;
+$grey-mid: #858585;
+$grey-light: #b3b3b3;
 // FONTS
 $nexa-light: 'nexa-light',sans-serif;
 $nexa-regular: 'nexa-regular',sans-serif;
@@ -18,8 +19,8 @@ $nexa-heavy: 'nexa-heavy',sans-serif;
 $museo-slab: 'museo-slab',serif;
 // Border radius shorthand
 @mixin border-radius($radius) {
-				-webkit-border-radius: $radius;
-				border-radius: $radius;
-				// background-clip: padding-box;
-				/* stops bg color from leaking outside the border: */
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  // background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
 }

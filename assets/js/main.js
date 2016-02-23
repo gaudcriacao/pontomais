@@ -1,5 +1,14 @@
 jQuery(document).ready(function($) {
 
+  window.paceOptions = {
+  // Disable the 'elements' source
+  elements: false,
+
+  // Only show the progress on regular and ajax-y page navigation,
+  // not every request
+  restartOnRequestAfter: false
+}
+
   /*==========================================================================
 FITVID
   ========================================================================== */
@@ -14,16 +23,26 @@ Responsive wp_video_shortcode().
    * Odin Core shortcodes
    */
 
-   /*==========================================================================
-   TABS
-   ========================================================================== */
+  /*==========================================================================
+  TABS
+  ========================================================================== */
   $('.odin-tabs a').click(function(e) {
     e.preventDefault();
     $(this).tab('show');
   });
 
-  // Tooltip.
+  /*==========================================================================
+  TOOLTIPS
+  ========================================================================== */
   $('.odin-tooltip').tooltip();
+
+
+  /*==========================================================================
+  EQUALIZE
+  ========================================================================== */
+  $('.equal-height').equalize(); // defaults to height
+  $('.equal-width').equalize('width'); // defaults to height
+  $('.owl-stage').equalize(); // defaults to height
 
   /*==========================================================================
   DEPOIMENTOS
@@ -47,17 +66,9 @@ Responsive wp_video_shortcode().
     }
   });
 
-
-  //Equalize
-  $('.equal-height').equalize(); // defaults to height
-  $('.equal-width').equalize('width'); // defaults to height
-  $('.owl-stage').equalize(); // defaults to height
-
-
   /*==========================================================================
   Slider
   ========================================================================== */
-
   $('.solucoes-list').bxSlider({
     mode: 'vertical',
     slideMargin: 30,
@@ -92,7 +103,9 @@ Responsive wp_video_shortcode().
     itemSelector: '.plano',
     layoutMode: 'fitRows'
   });
-  $grid.isotope({ filter: '.10-100' });
+  $grid.isotope({
+    filter: '.10, .50, .100'
+  });
   // filter functions
   var filterFns = {
 
@@ -116,27 +129,8 @@ Responsive wp_video_shortcode().
   });
 
   /*==========================================================================
-  Count to timer
-  ========================================================================== */
-
-  $('.number_count').waypoint(function() {
-    $(this).countTo({
-      speed: 1600,
-      formatter: function(value, options) {
-        value = value.toFixed(options.decimals);
-        value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-        return value;
-      }
-    });
-  }, {
-    triggerOnce: false,
-    offset: 'bottom-in-view'
-  });
-
-  /*==========================================================================
   AnchorScroll
   ========================================================================== */
-
   smoothScroll.init({
     selectorHeader: '.data-scroll-header', // Selector for fixed headers (must be a valid CSS selector)
     speed: 500, // Integer. How fast to complete the scroll in milliseconds
@@ -151,5 +145,22 @@ Responsive wp_video_shortcode().
   ========================================================================== */
   var wallopEl = document.querySelector('.Wallop');
   var slider = new Wallop(wallopEl);
+
+  /*==========================================================================
+  Count to timer
+  ========================================================================== */
+  // $('.number_count').waypoint(function() {
+  //   $(this).countTo({
+  //     speed: 1600,
+  //     formatter: function(value, options) {
+  //       value = value.toFixed(options.decimals);
+  //       value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  //       return value;
+  //     }
+  //   });
+  // }, {
+  //   triggerOnce: false,
+  //   offset: 'bottom-in-view'
+  // });
 
 });

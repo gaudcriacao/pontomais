@@ -12,6 +12,10 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/pace.min.js"></script> -->
+
+
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if ( ! get_option( 'site_icon' ) ) : ?>
@@ -24,7 +28,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 	<?php wp_head(); ?>
-	
+
 	<!-- GAnalytics -->
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -38,7 +42,7 @@
 	  ga('gaud.send', 'pageview');
 
 	</script>
-	
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -61,16 +65,31 @@
 						</div>
 						<nav class="collapse navbar-collapse navbar-main-navigation hidden-xs hidden-sm hidden-ipad" role="navigation">
 							<?php
-								wp_nav_menu(
-									array(
-										'theme_location' => 'main-menu',
-										'depth'          => 2,
-										'container'      => false,
-										'menu_class'     => 'nav navbar-nav navbar-right',
-										'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
-										'walker'         => new Odin_Bootstrap_Nav_Walker()
-									)
-								);
+								if ( is_front_page() ) {
+								    // This is the blog posts index
+										wp_nav_menu(
+											array(
+												'theme_location' => 'main-menu',
+												'depth'          => 2,
+												'container'      => false,
+												'menu_class'     => 'nav navbar-nav navbar-right',
+												'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
+												'walker'         => new Odin_Bootstrap_Nav_Walker()
+											)
+										);
+								} else {
+								    // This is not the blog posts index
+										wp_nav_menu(
+											array(
+												'theme_location' => 'pages-menu',
+												'depth'          => 2,
+												'container'      => false,
+												'menu_class'     => 'nav navbar-nav navbar-right',
+												'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
+												'walker'         => new Odin_Bootstrap_Nav_Walker()
+											)
+										);
+								}
 							?>
 						</nav><!-- .navbar-collapse -->
 					</div>
