@@ -554,51 +554,6 @@ body {
   }
 }
 // ==========================================================================
-// CONTADORES
-// ==========================================================================
-.section-contador {
-  padding: 80px 0;
-  background: #f9f9f9;
-  .counter {
-    background: url('../images/counter_bg.gif') center center no-repeat;
-    background-size: contain;
-    height: 250px;
-    width: 100%;
-    display: table;
-    margin: 30px 0 20px;
-    .count_text {
-      font-family: $nexa-regular;
-      text-align: center;
-      display: table-cell;
-      vertical-align: middle;
-      font-size: 78px;
-      color: $verde-dark;
-      .count-item {
-        margin: 0;
-      }
-      .sub_count {
-        font-family: $nexa-regular;
-        font-size: 28px;
-        display: block;
-        margin-top: -26px;
-      }
-    }
-  }
-  .title-counter {
-    font-family: $nexa-regular;
-    font-size: 20px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    text-align: center;
-    display: block;
-    color: $verde-mid;
-    padding: 20px 0;
-  }
-  .section-title {
-    margin: 0 0 30px;
-  }
-}
-// ==========================================================================
 // EXPERIMENTE
 // ==========================================================================
 #section-experimente {

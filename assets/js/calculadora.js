@@ -7,6 +7,6 @@ function calcular(val){
 	//if(result >= 60){
 		//document.getElementById('qtdresultado').innerHTML = ((result % 3600)/60).toFixed(1) + " hora(s)";
 	//}else{
-		document.getElementById('qtdresultado').innerHTML = result + " minutos";
+		document.getElementById('qtdresultado').innerHTML = result;
 	//}
 }

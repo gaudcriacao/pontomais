@@ -256,8 +256,9 @@ if (have_rows('vantagens')):
     <div class="row">
       <div class="col-md-12">
         <h3 class="section-title text-center">Você economiza mais tempo</h3>
+        <p class="section-intro">Descubra quanto tempo você gasta para fazer o fechamenta da sua folha ponto.</p>
       </div>
-	  <div class="row-height">
+	  <!-- <div class="row-height">
         <div class="col-md-8 col-height col-md-middle">
           <p class="infografico-title text-center text-grey">
             Informe a quantidade de funcionários
@@ -270,6 +271,43 @@ if (have_rows('vantagens')):
           </p>
 		  <h3 class="section-title text-center text-verd-dark" id="qtdresultado">0 minutos</h3>
 		  </div>
+        </div> -->
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="row calculadora_box">
+              <div class="row-height">
+                <div class="col-md-8 col-md-height col-md-middle left-box">
+                <div class="qtd-funcionarios">
+                  <p class="subtitle">
+                    Quantos funcionários você tem?
+                  </p>
+                  <input placeholder="00" class="form-control text-center" type="text" name="txt" value="" oninput="calcular(this.value)">
+                  <span class="help-input">funcionário(s)</span>
+                </div>
+                <div class="tempo-economia">
+                  <p class="subtitle">
+                    Veja quanto tempo você gasta
+                  </p>
+                  <h3 class="result-text" id="qtdresultado">0</h3>
+                  <span class="help-input">minutos</span>
+                </div>
+                </div>
+                <div class="col-md-4 col-md-height col-md-middle right-box">
+                <p class="subtitle text-white text-center">
+                  Quanto tempo você<br>
+                  leva com o Pontomais
+                </p>
+                <div class="um-clique">
+                  <span>
+                    <strong>1</strong>
+                    <br>
+                    clique
+                  </span>
+                </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
