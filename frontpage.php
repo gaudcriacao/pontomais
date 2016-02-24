@@ -298,12 +298,12 @@ if (have_rows('vantagens')):
                   Quanto tempo você<br>
                   leva com o Pontomais
                 </p>
-                <div class="um-clique">
-                  <span>
+                <div id="um-clique" class="um-clique">
+                  <!-- <span>
                     <strong>1</strong>
                     <br>
                     clique
-                  </span>
+                  </span> -->
                 </div>
                 </div>
               </div>

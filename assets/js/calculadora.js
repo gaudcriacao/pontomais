@@ -8,5 +8,6 @@ function calcular(val){
 		//document.getElementById('qtdresultado').innerHTML = ((result % 3600)/60).toFixed(1) + " hora(s)";
 	//}else{
 		document.getElementById('qtdresultado').innerHTML = result;
+		document.getElementById('um-clique').innerHTML = '<span><strong>1</strong><br>clique</span>';
 	//}
 }
