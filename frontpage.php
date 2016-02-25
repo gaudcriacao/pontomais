@@ -115,7 +115,7 @@ if (have_rows('vantagens')):
         ?>
 
           <div class="func-main gallery-a js-flickity"
-          data-flickity-options='{ "asNavFor": ".gallery-b", "contain": true, "pageDots": false, "cellAlign": "center", "freeScroll": false, "wrapAround": true }'>
+          data-flickity-options='{ "asNavFor": ".gallery-b", "contain": true, "pageDots": false, "cellAlign": "center", "draggable": false, "freeScroll": false, "wrapAround": true }'>
 
           <?php
               while (have_rows('funcionalidades')):
@@ -163,7 +163,7 @@ if (have_rows('vantagens')):
           ?>
 
             <div class="func-nav gallery-b js-flickity"
-             data-flickity-options='{ "prevNextButtons": false, "sync": ".gallery-a", "freeScroll": false, "wrapAround": true, "pageDots": false }'>
+             data-flickity-options='{ "prevNextButtons": false, "sync": ".gallery-a", "draggable": false, "freeScroll": false, "wrapAround": true, "pageDots": false }'>
 
             <?php
                 while (have_rows('funcionalidades')):
@@ -258,20 +258,7 @@ if (have_rows('vantagens')):
         <h3 class="section-title text-center">Você economiza mais tempo</h3>
         <p class="section-intro">Descubra quanto tempo você gasta para fazer o fechamenta da sua folha ponto.</p>
       </div>
-	  <!-- <div class="row-height">
-        <div class="col-md-8 col-height col-md-middle">
-          <p class="infografico-title text-center text-grey">
-            Informe a quantidade de funcionários
-          </p>
-			<input class="form-control input-lg input-sp text-center" type="text" name="txt" value="" oninput="calcular(this.value)">
-        </div>
-        <div class="col-md-4 col-height col-md-middle">
-          <p class="infografico-title text-center text-grey">
-            Veja quanto tempo você economiza
-          </p>
-		  <h3 class="section-title text-center text-verd-dark" id="qtdresultado">0 minutos</h3>
-		  </div>
-        </div> -->
+
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -282,7 +269,7 @@ if (have_rows('vantagens')):
                   <p class="subtitle">
                     Quantos funcionários você tem?
                   </p>
-                  <input placeholder="00" class="form-control text-center" type="text" name="txt" value="" oninput="calcular(this.value)">
+                  <input placeholder="00" class="form-control text-center" type="number" name="txt" value="" oninput="calcular(this.value)">
                   <span class="help-input">funcionário(s)</span>
                 </div>
                 <div class="tempo-economia">
