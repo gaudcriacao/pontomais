@@ -8,14 +8,24 @@ get_header();
 
 <!-- BEGIN SHOWCASE -->
 <div class="intro">
+
   <?php if(is_desktop()) {
     putRevSlider( 'showcase' );
   };
    ?>
-   <?php if(is_mobile()) {
-     putRevSlider( 'mobile' );
-    };
+
+  <div class="hidden-ipad">
+    <?php if(is_mobile()) {
+       putRevSlider( 'mobile' );
+      };
     ?>
+  </div>
+
+    <?php if(is_tablet()) {
+      putRevSlider( 'tablet' );
+     };
+   ?>
+
 </div>
 <!-- END SHOWCASE -->
 
@@ -365,14 +375,28 @@ if (have_rows('vantagens')):
     <section id="pricing-table">
       <div class="container">
         <div class="row">
+
           <div class="pricing">
-            <div class="button-group filters-button-group">
-              <span>Nº de Funcionários</span>
-              <button class="button is-checked" data-filter=".10, .50, .100">Até 100</button>
-              <button class="button" data-filter=".50, .100, .300">Até 300</button>
-              <button class="button" data-filter=".100, .300, .500">Acima de 300</button>
-            </div>
-            <div id="planos-grid">
+            <?php if(is_desktop()) {
+              echo '<div class="button-group filters-button-group">
+                <span>Nº de Funcionários</span>
+                <button class="button is-checked" data-filter=".10, .50, .100">Até 100</button>
+                <button class="button" data-filter=".50, .100, .300">Até 300</button>
+                <button class="button" data-filter=".100, .300, .500">Acima de 300</button>
+              </div>';
+            }; ?>
+
+            <?php if(is_tablet()) {
+              echo '<div class="button-group filters-button-group">
+                <span>Nº de Funcionários</span>
+                <button class="button is-checked" data-filter=".10, .50, .100">Até 100</button>
+                <button class="button" data-filter=".50, .100, .300">Até 300</button>
+                <button class="button" data-filter=".100, .300, .500">Acima de 300</button>
+              </div>';
+            }; ?>
+
+            <div <?php if(is_desktop()) { echo 'id="planos-grid"'; }; ?> <?php if(is_tablet()) { echo 'id="planos-grid"'; }; ?> >
+
               <?php
                 $args_planos = array (
                   'post_type'              => array( 'plano' ),
@@ -388,7 +412,7 @@ if (have_rows('vantagens')):
 
                 <?php while ( $plano_list->have_posts() ) : $plano_list->the_post(); ?>
 
-                  <div class="plano col-md-4 col-xs-12 <?php echo the_field('qtd_de_colaboradores'); ?>">
+                  <div class="plano col-md-4 col-sm-4 col-xs-12 <?php echo the_field('qtd_de_colaboradores'); ?>">
                     <div class="pricing-table">
                       <div class="pricing-header">
                         <p class="pricing-title"><?php the_title(); ?></p>
@@ -423,131 +447,13 @@ if (have_rows('vantagens')):
 
                 <?php endwhile; ?>
 
-
               <?php else : ?>
                 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
               <?php endif; ?>
 
-              <!-- <div class="plano col-md-4  10-100">
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <p class="pricing-title">FREE</p>
-                    <p class="pricing-rate"><span class="price-free">FREE para sempre</span></p>
-                  </div>
-                  <div class="pricing-list">
-                    <ul>
-                      <li><strong>Até 10 colaboradores</strong></li>
-                      <li>Aplicativo Mobile</li>
-                      <li>Marcações de ponto via web/smartphone/tablet</li>
-                      <li>Painel de indicadores</li>
-                      <li>Fechamento de folha ponto</li>
-                      <li>Notificações de ocorrências e marcações</li>
-                      <li>Controle de hora extra</li>
-                      <li>Monitor de banco de horas</li>
-                      <li>Captura de dados do relógio ponto</li>
-                    </ul>
-                  </div>
-                  <div class="assinar-table">
-                    <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
-                  </div>
-                </div>
-              </div>
-              <div class="plano col-md-4 10-100 50-300">
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <p class="pricing-title">Micro</p>
-                    <p class="pricing-rate"><sup>$</sup> 75 <span>/mês</span></p>
-                  </div>
-                  <div class="pricing-list">
-                    <ul>
-                      <li><strong>Até 50 colaboradores</strong></li>
-                      <li>Aplicativo Mobile</li>
-                      <li>Marcações de ponto via web/smartphone/tablet</li>
-                      <li>Painel de indicadores</li>
-                      <li>Fechamento de folha ponto</li>
-                      <li>Notificações de ocorrências e marcações</li>
-                      <li>Controle de hora extra</li>
-                      <li>Monitor de banco de horas</li>
-                      <li>Captura de dados do relógio ponto</li>
-                    </ul>
-                  </div>
-                  <div class="assinar-table">
-                    <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
-                  </div>
-                </div>
-              </div>
-              <div class="plano col-md-4 10-100 50-300 up-300">
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <p class="pricing-title">Pequeno</p>
-                    <p class="pricing-rate"><sup>$</sup> 99 <span>/mês</span></p>
-                  </div>
-                  <div class="pricing-list">
-                    <ul>
-                      <li><strong>Até 100 colaboradores</strong></li>
-                      <li>Aplicativo Mobile</li>
-                      <li>Marcações de ponto via web/smartphone/tablet</li>
-                      <li>Painel de indicadores</li>
-                      <li>Fechamento de folha ponto</li>
-                      <li>Notificações de ocorrências e marcações</li>
-                      <li>Controle de hora extra</li>
-                      <li>Monitor de banco de horas</li>
-                      <li>Captura de dados do relógio ponto</li>
-                    </ul>
-                  </div>
-                  <div class="assinar-table">
-                    <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
-                  </div>
-                </div>
-              </div>
-              <div class="plano col-md-4 50-300 up-300 plano-hide">
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <p class="pricing-title">Médio</p>
-                    <p class="pricing-rate"><sup>$</sup> 239 <span>/mês</span></p>
-                  </div>
-                  <div class="pricing-list">
-                    <ul>
-                      <li><strong>Até 300 colaboradores</strong></li>
-                      <li>Aplicativo Mobile</li>
-                      <li>Marcações de ponto via web/smartphone/tablet</li>
-                      <li>Painel de indicadores</li>
-                      <li>Fechamento de folha ponto</li>
-                      <li>Notificações de ocorrências e marcações</li>
-                      <li>Controle de hora extra</li>
-                      <li>Monitor de banco de horas</li>
-                      <li>Captura de dados do relógio ponto</li>
-                    </ul>
-                  </div>
-                  <div class="assinar-table">
-                    <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a>
-                  </div>
-                </div>
-              </div>
-              <div class="plano col-md-4 up-300 plano-hide">
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <p class="pricing-title">Grande</p>
-                    <p class="pricing-rate"><sup>$</sup> 399 <span>/mês</span></p>
-                  </div>
-                  <div class="pricing-list">
-                    <ul>
-                      <li><strong>Até 500 colaboradores</strong></li>
-                      <li>Aplicativo Mobile</li>
-                      <li>Marcações de ponto via web/smartphone/tablet</li>
-                      <li>Painel de indicadores</li>
-                      <li>Fechamento de folha ponto</li>
-                      <li>Notificações de ocorrências e marcações</li>
-                      <li>Controle de hora extra</li>
-                      <li>Monitor de banco de horas</li>
-                      <li>Captura de dados do relógio ponto</li>
-                    </ul>
-                  </div>
-                  <div class="assinar-table"> <a href="http://app.pontomaisweb.com.br/#/cadastrar">Assinar</a> </div>
-                </div>
-              </div> -->
             </div>
           </div>
+
         </div>
       </div>
     </section>

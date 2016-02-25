@@ -1,0 +1,73 @@
+/* ----------- iPad mini ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {}
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {}
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .hidden-ipad {
+    display: none;
+    visibility: hidden;
+  }
+  //--------------------------------------------------------------------------------------------------------
+  // INTRO
+  //--------------------------------------------------------------------------------------------------------
+  .intro {
+    .intro-signup {
+      p {}
+      .input-group {
+        .form-control {}
+      }
+      .btn {
+        font-size: 18px !important;
+        width: 100%;
+        padding: 10px 15px !important;
+      }
+    }
+  }
+}
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  //--------------------------------------------------------------------------------------------------------
+  // CALCULADORA
+  //--------------------------------------------------------------------------------------------------------
+  .section-contador {
+    padding: 50px 0;
+    .section-title {
+      font-size: 28px;
+    }
+    .section-intro {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+  }
+  .calculadora_box {
+    margin-left: 0;
+    margin-right: 0;
+    .left-box {
+      padding: 50px 15px;
+    }
+    .right-box {
+      @include border-radius(0);
+      -webkit-border-bottom-right-radius: 15px;
+      -webkit-border-bottom-left-radius: 15px;
+      -moz-border-radius-bottomright: 15px;
+      -moz-border-radius-bottomleft: 15px;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      padding: 40px 15px;
+    }
+  }
+}
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {}
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {}
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {}
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {}

@@ -198,7 +198,7 @@
     }
   }
   //--------------------------------------------------------------------------------------------------------
-  // EXPERIMENTE
+  // CALCULADORA
   //--------------------------------------------------------------------------------------------------------
   .section-contador {
     padding: 50px 0;
@@ -273,6 +273,43 @@
   }
 }
 /* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {}
+@media only screen and (min-device-width : 321px) and (max-device-width : 760px) {
+  .alerta-mobile {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    z-index: 9999;
+    color: #fff;
+    text-align: center;
+    background: $verde-mid;
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    span {
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 30px;
+      font-size: 28px;
+    }
+  }
+}
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {}
+@media only screen and (max-width : 320px) {
+  .alerta-mobile {
+    display: none;
+  }
+}
+/* Smartphones (portrait) (Galaxy S4 Up) ----------- */
+@media only screen and (max-width : 375px) {
+  .alerta-mobile {
+    display: none;
+  }
+}

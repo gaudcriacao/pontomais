@@ -47,12 +47,19 @@
 
 <body <?php body_class(); ?>>
 
+	<?php if(is_mobile()) {
+		echo '<div class="alerta-mobile">
+			<span>Para vizualizar melhor nosso site vire seu aparelho para o modo retrato.<br>Obrigado.</span>
+		</div>';
+		};
+	?>
+
 <header id="header" class="data-scroll-header">
 <!-- NAV -->
 <nav class="navbar navbar-default navbar-fixed-top main-menu">
 		<div class="container">
 				<div class="row">
-					<div class="col-md-9 col-xs-12">
+					<div class="col-lg-9 col-md-12 col-xs-12">
 						<div class="navbar-header">
 							<button id="trigger-overlay" class="navbar-toggle" type="button">
 								<span class="icon-bar"></span>
@@ -93,7 +100,7 @@
 							?>
 						</nav><!-- .navbar-collapse -->
 					</div>
-					<div class="col-md-3 hidden-sm hidden-ipad">
+					<div class="col-md-3 hidden-xs hidden-sm hidden-ipad">
 						<div class="login-menu">
 							<ul>
 								<li><a href="http://app.pontomaisweb.com.br/#/acessar">Entrar</a></li>
