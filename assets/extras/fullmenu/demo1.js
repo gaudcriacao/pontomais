@@ -4,6 +4,7 @@
     closeBttn = overlay.querySelector('button.overlay-close');
 
 var itemBttn = document.getElementById('menu-item-46');
+var itemBttn = document.getElementById('menu-item-131');
 
   transEndEventNames = {
       'WebkitTransition': 'webkitTransitionEnd',
