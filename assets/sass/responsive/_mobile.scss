@@ -37,7 +37,7 @@
     }
     .navbar-toggle {
       display: block;
-      margin: 24px 15px 0 0;
+      margin: 24px 0 0 0;
     }
   }
   //--------------------------------------------------------------------------------------------------------
@@ -129,10 +129,10 @@
     width: 50px;
   }
   .flickity-prev-next-button.previous {
-    left: -20px !important;
+    left: -15px !important;
   }
   .flickity-prev-next-button.next {
-    right: -20px !important;
+    right: -15px !important;
   }
   .box-func {
     width: 100%;
@@ -251,7 +251,8 @@
   #footer {
     height: 400px;
     .container-footer {
-      padding: 50px 0 30px;
+      padding-top: 50px;
+      padding-bottom: 30px;
     }
     .footer-logo {
       img {

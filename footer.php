@@ -16,18 +16,18 @@
 		<div class="container container-footer">
 			<div class="row">
 				<div class="row-height">
-					<div class="col-md-3 col-sm-6 col-md-height col-md-middle">
+					<div class="col-md-3 col-sm-6 col-xs-12 col-md-height col-md-middle">
 						<div class="footer-logo">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.svg" alt="" class="img-responsive" />
 						</div>
 					</div>
-					<div class="col-md-6 col-sm-6 col-md-height col-md-middle">
+					<div class="col-md-6 col-sm-6 col-xs-12 col-md-height col-md-middle">
 						<div class="footer-telefone">
 							<span>Alguma dúvida?</span>
 							<a href="tel:4136218423">41 4063.9567</a>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-12 col-md-height col-md-middle">
+					<div class="col-md-3 col-sm-12 col-xs-12 col-md-height col-md-middle">
 						<div class="footer-social">
 							<ul>
 								<li class="icon-social icon-facebook hvr-grow">

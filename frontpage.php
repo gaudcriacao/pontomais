@@ -401,7 +401,7 @@ if (have_rows('vantagens')):
 
                 <?php while ( $plano_list->have_posts() ) : $plano_list->the_post(); ?>
 
-                  <div class="plano col-md-4 <?php echo the_field('qtd_de_colaboradores'); ?>">
+                  <div class="plano col-md-4 col-xs-12 <?php echo the_field('qtd_de_colaboradores'); ?>">
                     <div class="pricing-table">
                       <div class="pricing-header">
                         <p class="pricing-title"><?php the_title(); ?></p>

@@ -169,7 +169,7 @@
   height: 250px;
   background-color: $verde-dark;
   .container-footer {
-    padding: 50px 0;
+    padding: 50px 15px;
   }
   .footer-telefone {
     span {
@@ -235,7 +235,8 @@
   color: #fff;
   font-size: 10px;
   letter-spacing: 1px;
-  padding: 20px 0 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 html {
   position: relative;
