@@ -37,7 +37,11 @@
     }
     .navbar-toggle {
       display: block;
+<<<<<<< Updated upstream
       margin: 24px 0 0;
+=======
+      margin: 24px 15px 0 0;
+>>>>>>> Stashed changes
     }
   }
   //--------------------------------------------------------------------------------------------------------
@@ -76,9 +80,14 @@
         .form-control {}
       }
       .btn {
+<<<<<<< Updated upstream
         font-size: 18px !important;
         width: 100%;
         padding: 10px 15px !important;
+=======
+        font-size: 18px;
+        width: 100%;
+>>>>>>> Stashed changes
       }
     }
   }
@@ -130,10 +139,17 @@
     width: 50px;
   }
   .flickity-prev-next-button.previous {
+<<<<<<< Updated upstream
     left: -15px !important;
   }
   .flickity-prev-next-button.next {
     right: -15px !important;
+=======
+    left: -20px !important;
+  }
+  .flickity-prev-next-button.next {
+    right: -20px !important;
+>>>>>>> Stashed changes
   }
   .box-func {
     width: 100%;
@@ -198,7 +214,11 @@
     }
   }
   //--------------------------------------------------------------------------------------------------------
+<<<<<<< Updated upstream
   // CALCULADORA
+=======
+  // EXPERIMENTE
+>>>>>>> Stashed changes
   //--------------------------------------------------------------------------------------------------------
   .section-contador {
     padding: 50px 0;
@@ -252,8 +272,12 @@
   #footer {
     height: 400px;
     .container-footer {
+<<<<<<< Updated upstream
       padding-top: 50px;
       padding-bottom: 30px;
+=======
+      padding: 50px 0 30px;
+>>>>>>> Stashed changes
     }
     .footer-logo {
       img {

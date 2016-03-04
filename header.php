@@ -102,9 +102,24 @@
 					</div>
 					<div class="col-md-3 hidden-xs hidden-sm hidden-ipad">
 						<div class="login-menu">
+							<style>
+								#experimente{
+									background-color: #FDBA63;
+									border-color: #FDBA63;
+									color: #FFFFFF;
+								}
+								#experimente:hover, #experimente:focus, #experimente:active{
+									background-color: transparent;
+									color: #FDBA63;
+								}
+							</style>
 							<ul>
 								<li><a href="http://app.pontomaisweb.com.br/#/acessar">Entrar</a></li>
+<<<<<<< Updated upstream
 								<li><a href="http://app.pontomaisweb.com.br/#/cadastrar" class="btn btn-md btn-bold btn-verde-mid-outline">Experimente</a></li>
+=======
+								<li><a href="http://app.pontomaisweb.com.br/#/cadastrar" id="experimente" class="btn btn-md btn-bold">Experimente</a></li>
+>>>>>>> Stashed changes
 							</ul>
 						</div>
 					</div>
