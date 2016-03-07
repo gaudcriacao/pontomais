@@ -115,11 +115,7 @@
 							</style>
 							<ul>
 								<li><a href="http://app.pontomaisweb.com.br/#/acessar">Entrar</a></li>
-<<<<<<< Updated upstream
-								<li><a href="http://app.pontomaisweb.com.br/#/cadastrar" class="btn btn-md btn-bold btn-verde-mid-outline">Experimente</a></li>
-=======
 								<li><a href="http://app.pontomaisweb.com.br/#/cadastrar" id="experimente" class="btn btn-md btn-bold">Experimente</a></li>
->>>>>>> Stashed changes
 							</ul>
 						</div>
 					</div>
